@@ -1,11 +1,10 @@
 class CreateActions < ActiveRecord::Migration[5.1]
   def change
     create_table :actions do |t|
-      belongs_to    :contact
 
       t.text        "should_do"
       t.date        "due_date"
-      t.integer     "criticality"      
+      t.integer     "criticality"
       t.timestamps
     end
   end

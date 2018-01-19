@@ -1,7 +1,6 @@
 class CreateNotes < ActiveRecord::Migration[5.1]
   def change
     create_table :notes do |t|
-      belongs_to    :contact
 
       t.text        "body"
       t.timestamps
