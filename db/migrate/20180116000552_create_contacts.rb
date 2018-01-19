@@ -1,9 +1,11 @@
 class CreateContacts < ActiveRecord::Migration[5.1]
   def change
     create_table :contacts do |t|
-      t.primary_key "contact_id"
-      t.string      "first_name",   :default => 'unknown',  :null => false
-      t.string      "last_name",    :default => 'unknown',  :null => false
+      has_many      :phone_numbers
+      has_many      :notes
+
+      t.string      "first_name",   :default => '',  :null => false
+      t.string      "last_name",    :default => '',  :null => false
       t.string      "middle_name"
       t.string      "other_name"
       t.string      "name_prefix"
