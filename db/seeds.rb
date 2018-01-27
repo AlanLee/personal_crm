@@ -10,8 +10,6 @@ PhoneNumber.delete_all
 Note.delete_all
 Action.delete_all
 
-Contact.create( :first_name => 'Alan', :last_name => 'See' )
-
 alanlee = Contact.new
   alanlee.first_name = 'Alan'
   alanlee.last_name  =  'Lee'
@@ -22,7 +20,6 @@ alanlee = Contact.new
   alanlee.notes << Note.create( :body => 'has two children; one in Cambridge, the other in San Francisco' )
   alanlee.notes << Note.create( :body => 'doesn\t watch much TV except for USC football' )
   alanlee.notes << Note.create( :body => 'has lots of books in the large bookcase' )
-
 henrylee = Contact.new
   henrylee.first_name = 'Henry'
   henrylee.last_name = 'Lee'
@@ -32,16 +29,22 @@ henrylee = Contact.new
   henrylee.notes << Note.create( :body => 'played a lot of soccer but it tapered off while he was in college' )
   henrylee.actions << Action.create( :should_do => 'meet for coffee and discuss music' )
   henrylee.actions << Action.create( :should_do => 'check if Henry needs funding later this 2018 year' )
-  henrylee.actions << Action.create( :should_do => 'does Henry play golf? should invite him sometime' )
-  henrylee.phone_numbers << PhoneNumber.create( :call_number => 9497519287 )
-
-
-Contact.create( :first_name => 'Heidi' )
-
-Note.create( :body => 'loves music', :contact_id => Contact.find_by_first_name("Henry").id )
-Note.create( :body => 'lives in San Francisco', :contact_id => Contact.find_by_first_name("Henry").id )
-Note.create( :body => 'played a lot of soccer', :contact_id => Contact.find_by_first_name("Henry").id )
-
-Note.create( :body => 'Lives in Cambridge, Massashusetts', :contact_id => Contact.find_by_first_name("Heidi").id )
-Note.create( :body => 'BS Business 2011 Boston University', :contact_id => Contact.find_by_first_name("Heidi").id )
-Note.create( :body => 'Loves baking', :contact_id => Contact.find_by_first_name("Heidi").id )
+  henrylee.actions << Action.create( :should_do => 'does Henry play golf? should invite him if he plays' )
+  henrylee.phone_numbers << PhoneNumber.create( :call_number => 9497519287, :phone_type => 'cell' )
+heidilee = Contact.new
+  heidilee.first_name = 'Heidi'
+  heidilee.last_name = 'Lee'
+  heidilee.middle_name = 'April'
+  heidilee.save
+  heidilee.notes << Note.create( :body => 'lives in Cambridge, Massachusetts' )
+  heidilee.notes << Note.create( :body => 'is a black-belt in Tai Quon Do' )
+  heidilee.notes << Note.create( :body => 'BS Business 2011 Boston University' )
+  heidilee.actions << Action.create( :should_do => 'buy her a cookbok and get a secret recipe from her' )
+  heidilee.phone_numbers << PhoneNumber.create( :call_number => 9493834909 )
+alanturing = Contact.new
+  alanturing.first_name = 'Alan'
+  alanturing.last_name  =  'Turing'
+  alanturing.save
+  alanturing.notes << Note.create( :body => 'is another Alan in this database table' )
+  alanturing.notes << Note.create( :body => 'was an English computer scientist but also very talented in other fields' )
+  alanturing.notes << Note.create( :body => 'June 23, 1912 - June 7, 1954' )
