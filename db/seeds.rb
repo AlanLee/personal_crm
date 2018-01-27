@@ -33,7 +33,7 @@ henrylee = Contact.new
   henrylee.actions << Action.create( :should_do => 'meet for coffee and discuss music' )
   henrylee.actions << Action.create( :should_do => 'check if Henry needs funding later this 2018 year' )
   henrylee.actions << Action.create( :should_do => 'does Henry play golf? should invite him sometime' )
-  # henrylee.phone_numbers << PhoneNumber.create( :call_number => 9497519287 )
+  henrylee.phone_numbers << PhoneNumber.create( :call_number => 9497519287 )
 
 
 Contact.create( :first_name => 'Heidi' )
