@@ -1,13 +1,24 @@
 <h1>Hello, Singapore (where it's nice and warm)!</h1>
 
 <h3> Contact Table Records </h3>
-  <table>
-  <% if @contact_active_record != nil %>
-      <% @contact_active_record.each do |c| %>
-          <tr><td>  <%= c.first_name %> </td><td> <%= c.last_name %> </td></tr>
+  <table style="border: 1px solid black">
+  <tr><td> First Name </td><td> Last Name </td><td> Note</td></tr>
+  <% if @contact_all != nil %>
+      <% @contact_all.each do |c| %>
+          <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
+              <td>
+              <% if @note_all.where( :contact_id => c.id ) != nil %>
+                  <%  @note_all.where( :contact_id => c.id ).each do |n| %>
+                      <%= n.body %><br>
+                  <% end %>
+              <% end %>
+              </td>
+
+          </tr>
       <% end %>
   <% end %>
   </table>
 
-<p> Record Count: &nbsp; <%= @contact_active_record.count %></p>
-<p>Find me in app/views/home/index.html.erb</p>
+<p> Record Count: &nbsp; <%= @contact_all.count %></p>
+<p> Find me in app/views/home/index.html.erb</p>
+<%= @last_contact_note %>

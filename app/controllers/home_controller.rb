@@ -1,10 +1,11 @@
 class HomeController < ApplicationController
   def index
-    # @test = Contact.all
-    # @test = @test.count
-    # @test = @test.find_by_first_name('Alan').last_name
-    #  @test = Contact.first.first_name
-    @test = Contact.where(:first_name => 'Alan').count
-    @contact_active_record = Contact.all
+
+    @contact_all = Contact.all
+    @note_all    = Note.all
+    @action_all = Action.all
+    @phone_number_all = PhoneNumber.all
+
+    @last_contact_note = @note_all.find_by_contact_id( @contact_all.first.id ).body 
   end
 end

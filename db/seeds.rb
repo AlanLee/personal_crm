@@ -18,7 +18,7 @@ alanlee = Contact.new
   alanlee.notes << Note.create( :body => 'been to Hawaii once' )
   alanlee.notes << Note.create( :body => 'wants to lose 10 lbs. but can\'t seem to' )
   alanlee.notes << Note.create( :body => 'has two children; one in Cambridge, the other in San Francisco' )
-  alanlee.notes << Note.create( :body => 'doesn\t watch much TV except for USC football' )
+  alanlee.notes << Note.create( :body => 'doesn\'t watch much TV except for USC football' )
   alanlee.notes << Note.create( :body => 'has lots of books in the large bookcase' )
 henrylee = Contact.new
   henrylee.first_name = 'Henry'
@@ -52,7 +52,11 @@ alansee = Contact.new
   alansee.first_name = 'Alan'
   alansee.last_name  =  'See'
   alansee.save
-  alansee.notes << Note.create( :body => 'is at home in Irvine most days' )
-  alansee.notes << Note.create( :body => 'waiting for trash day that comes once a week' )
+  alansee.notes << Note.create( :body => 'likes sitting on a See-Saw' )
+  alansee.notes << Note.create( :body => 'and eating See\'s Candies' )
   alansee.actions << Action.create( :should_do => 'invite him out sometime' )
   alansee.phone_numbers << PhoneNumber.create( :call_number => 9494333366 )
+minniemouse = Contact.new
+  minniemouse.first_name = 'Minnie'
+  minniemouse.last_name  =  'Mouse'
+  minniemouse.save
