@@ -1,15 +1,32 @@
 <h1>Hello, Singapore (where it's nice and warm)!</h1>
 
-<h3> Contact Table Records </h3>
+<h3> Contacts and Associated Information </h3>
   <table style="border: 1px solid black">
-  <tr><td> First Name </td><td> Last Name </td><td> Note</td></tr>
+  <tr><td> First Name </td><td> Last Name </td><td> Note</td><td> Should Do</td><td> Phone Number</td></tr>
   <% if @contact_all != nil %>
       <% @contact_all.each do |c| %>
           <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
+
               <td>
               <% if @note_all.where( :contact_id => c.id ) != nil %>
                   <%  @note_all.where( :contact_id => c.id ).each do |n| %>
                       <%= n.body %><br>
+                  <% end %>
+              <% end %>
+              </td>
+
+              <td>
+              <% if @action_all.where( :contact_id => c.id ) != nil %>
+                  <%  @action_all.where( :contact_id => c.id ).each do |a| %>
+                      <%= a.should_do %><br>
+                  <% end %>
+              <% end %>
+              </td>
+
+              <td>
+              <% if @phone_number_all.where( :contact_id => c.id ) != nil %>
+                  <%  @phone_number_all.where( :contact_id => c.id ).each do |p| %>
+                      <%= p.call_number %><br>
                   <% end %>
               <% end %>
               </td>
@@ -19,6 +36,4 @@
   <% end %>
   </table>
 
-<p> Record Count: &nbsp; <%= @contact_all.count %></p>
-<p> Find me in app/views/home/index.html.erb</p>
-<%= @last_contact_note %>
+<p> Contact Record Count: &nbsp; <%= @contact_all.count %></p>
