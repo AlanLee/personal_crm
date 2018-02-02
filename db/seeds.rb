@@ -48,3 +48,11 @@ alanturing = Contact.new
   alanturing.notes << Note.create( :body => 'is another Alan in this database table' )
   alanturing.notes << Note.create( :body => 'was an English computer scientist but also very talented in other fields' )
   alanturing.notes << Note.create( :body => 'June 23, 1912 - June 7, 1954' )
+alansee = Contact.new
+  alansee.first_name = 'Alan'
+  alansee.last_name  =  'See'
+  alansee.save
+  alansee.notes << Note.create( :body => 'is at home in Irvine most days' )
+  alansee.notes << Note.create( :body => 'waiting for trash day that comes once a week' )
+  alansee.actions << Action.create( :should_do => 'invite him out sometime' )
+  alansee.phone_numbers << PhoneNumber.create( :call_number => 9494333366 )

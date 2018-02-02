@@ -1,2 +1,13 @@
-<h1>Hello, Indonesia (where it's nice and warm)!</h1>
+<h1>Hello, Singapore (where it's nice and warm)!</h1>
+
+<h3> Contact Table Records </h3>
+  <table>
+  <% if @contact_active_record != nil %>
+      <% @contact_active_record.each do |c| %>
+          <tr><td>  <%= c.first_name %> </td><td> <%= c.last_name %> </td></tr>
+      <% end %>
+  <% end %>
+  </table>
+
+<p> Record Count: &nbsp; <%= @contact_active_record.count %></p>
 <p>Find me in app/views/home/index.html.erb</p>
