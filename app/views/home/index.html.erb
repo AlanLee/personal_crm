@@ -10,7 +10,7 @@
               <td>
               <% if @note_all.where( :contact_id => c.id ) != nil %>
                   <%  @note_all.where( :contact_id => c.id ).each do |n| %>
-                      <%= n.body %><br>
+                      <%= n.body %> This is a test: <%=  c.notes.count %><br>
                   <% end %>
               <% end %>
               </td>
