@@ -63,3 +63,14 @@ minniemouse = Contact.new
   minniemouse.save
   minniemouse.phone_numbers << PhoneNumber.create( :call_number => 8001001000 )
   minniemouse.actions << Action.create( :should_do => 'should introduce her to Mickey' )
+tsuyoshi = Contact.new
+  tsuyoshi.first_name = 'Tsuyohsi'
+  tsuyoshi.save
+  tsuyoshi.notes << Note.create( :body => 'Friend of Kimiko & Kihei; a lawyer for some Japanese company operating in or near Irvine.')
+  tsuyoshi.notes << Note.create( :body => 'Husband of Sachiko Sakai.')
+sachikosakai = Contact.new
+  sachikosakai.first_name = 'Sachiko'
+  sachikosakai.last_name = 'Sakai'
+  sachikosakai.save
+  sachikosakai.notes << Note.create( :body => 'Friend of Kimiko & Kihei; an active Ph.D. archeologist; wife of Tsuyoshi.')
+  sachikosakai.notes << Note.create( :body => '15 Flaxwood, Irvine, CA.')

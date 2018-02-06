@@ -1,4 +1,4 @@
-<h1>Hello, Singapore (where it's nice and warm)!</h1>
+<h1>Hello, Singapore & Shanghai! Hello, Jakarta & Bali!</h1>
 
 <h3> Contacts and Associated Information </h3>
   <table style="border: 1px solid black">
@@ -8,27 +8,42 @@
           <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
 
               <td>
-              <% if @note_all.where( :contact_id => c.id ) != nil %>
-                  <%  @note_all.where( :contact_id => c.id ).each do |n| %>
-                      <%= n.body %> This is a test: <%=  c.notes.count %><br>
+              <% if c.notes != nil %>
+                  <%  c.notes.each do |n| %>
+                      <%= n.body %><br>
                   <% end %>
               <% end %>
-              </td>
+<!--          <% if @note_all.where( :contact_id => c.id ) != nil %>
+                  <%  @note_all.where( :contact_id => c.id ).each do |n| %>
+                      <%= n.body %><br>
+                  <% end %>
+              <% end %>
+              </td> -->
 
               <td>
-              <% if @action_all.where( :contact_id => c.id ) != nil %>
-                  <%  @action_all.where( :contact_id => c.id ).each do |a| %>
+              <% if c.actions != nil %>
+                  <%  c.actions.each do |a| %>
                       <%= a.should_do %><br>
                   <% end %>
               <% end %>
+<!--          <% if @action_all.where( :contact_id => c.id ) != nil %>
+                  <%  @action_all.where( :contact_id => c.id ).each do |a| %>
+                      <%= a.should_do %><br>
+                  <% end %>
+              <% end %> -->
               </td>
 
               <td>
-              <% if @phone_number_all.where( :contact_id => c.id ) != nil %>
-                  <%  @phone_number_all.where( :contact_id => c.id ).each do |p| %>
+              <% if c.phone_numbers != nil %>
+                  <%  c.phone_numbers.each do |p| %>
                       <%= p.call_number %><br>
                   <% end %>
               <% end %>
+<!--          <% if @phone_number_all.where( :contact_id => c.id ) != nil %>
+                  <%  @phone_number_all.where( :contact_id => c.id ).each do |p| %>
+                      <%= p.call_number %><br>
+                  <% end %>
+              <% end %>  -->
               </td>
 
           </tr>
