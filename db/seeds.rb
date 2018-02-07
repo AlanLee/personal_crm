@@ -27,7 +27,7 @@ henrylee = Contact.new
   henrylee.save
   henrylee.notes << Note.create( :body => 'has two degrees from Stanford University' )
   henrylee.notes << Note.create( :body => 'sold OrderAhead in 2017 to Square Inc.' )
-  henrylee.notes << Note.create( :body => 'played a lot of soccer as a teenage' )
+  henrylee.notes << Note.create( :body => 'played a lot of soccer as a teenager' )
   henrylee.actions << Action.create( :should_do => 'meet for coffee and discuss music' )
   henrylee.actions << Action.create( :should_do => 'check if Henry needs funding later in 2018' )
   henrylee.actions << Action.create( :should_do => 'does Henry play golf? should invite him if he plays' )
