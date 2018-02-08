@@ -19,7 +19,7 @@ henrylee = Contact.new
   henrylee.first_name = 'Henry'
   henrylee.last_name = 'Lee'
   henrylee.save
-  henrylee.notes << Note.create( :body => 'has two degrees from Stanford University' )
+  henrylee.notes << Note.create( :body => 'went to Stanford' )
   henrylee.notes << Note.create( :body => 'sold OrderAhead in 2017 to Square Inc.' )
   henrylee.notes << Note.create( :body => 'played a lot of soccer as a teenager' )
   henrylee.actions << Action.create( :should_do => 'meet for coffee and discuss music' )
