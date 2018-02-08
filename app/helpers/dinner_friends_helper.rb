@@ -1,0 +1,2 @@
+module DinnerFriendsHelper
+end

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  who: MyString
+  contact: one
+
+two:
+  who: MyString
+  contact: two

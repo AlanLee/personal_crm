@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Who:</strong>
+  <%= @dinner_friend.who %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @dinner_friend.contact %>
+</p>
+
+<%= link_to 'Edit', edit_dinner_friend_path(@dinner_friend) %> |
+<%= link_to 'Back', dinner_friends_path %>

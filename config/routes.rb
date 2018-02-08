@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dinner_friends
   get 'home/index'
   get 'show_all_data/show'
 
