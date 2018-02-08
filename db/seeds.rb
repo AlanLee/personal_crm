@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+DinnerFriend.delete_all  # If this is placed after Contact.delete_all, then 'rake db:seed' will fail
 Contact.delete_all
 PhoneNumber.delete_all
 Note.delete_all
@@ -17,8 +11,8 @@ alanlee = Contact.new
   alanlee.notes << Note.create( :body => 'is a part-time videographer' )
   alanlee.notes << Note.create( :body => 'been to Hawaii once' )
   alanlee.notes << Note.create( :body => 'wants to lose 10 lbs. but can\'t seem to' )
-  alanlee.notes << Note.create( :body => 'has two children; one in Cambridge, the other in San Francisco' )
-  alanlee.notes << Note.create( :body => 'doesn\'t hardly watch TV but will watch USC football' )
+  alanlee.notes << Note.create( :body => 'has daughter in Cambridge, son in SF' )
+  alanlee.notes << Note.create( :body => 'doesn\'t watch TV except USC football games' )
   alanlee.notes << Note.create( :body => 'has lots of books in the large bookcase' )
   alanlee.phone_numbers << PhoneNumber.create( :call_number => 9494333366, :phone_type => 'cell' )
 henrylee = Contact.new
@@ -42,12 +36,14 @@ heidilee = Contact.new
   heidilee.notes << Note.create( :body => 'BS Business 2011 Boston University' )
   heidilee.actions << Action.create( :should_do => 'buy her a cookbok and get a new recipe from her' )
   heidilee.phone_numbers << PhoneNumber.create( :call_number => 9493834909 )
+  heidilee.dinner_friends << DinnerFriend.create( :who => 'Bruce Lee, from the Tae Kwon Do club' )
+  heidilee.dinner_friends << DinnerFriend.create( :who => 'Lauren, Heidi\'s BU classmate and apt-mate' )
 alanturing = Contact.new
   alanturing.first_name = 'Alan'
   alanturing.last_name  =  'Turing'
   alanturing.save
   alanturing.notes << Note.create( :body => 'is another Alan in this database table' )
-  alanturing.notes << Note.create( :body => 'was an English computer scientist but also very talented in other fields' )
+  alanturing.notes << Note.create( :body => 'was an English computer scientist' )
   alanturing.notes << Note.create( :body => 'June 23, 1912 - June 7, 1954' )
 alansee = Contact.new
   alansee.first_name = 'Alan'
@@ -63,14 +59,15 @@ minniemouse = Contact.new
   minniemouse.save
   minniemouse.phone_numbers << PhoneNumber.create( :call_number => 8001001000 )
   minniemouse.actions << Action.create( :should_do => 'should introduce her to Mickey' )
+  minniemouse.dinner_friends << DinnerFriend.create( :who => 'Donald Duck is Minnie\'s best friend' )
 tsuyoshi = Contact.new
   tsuyoshi.first_name = 'Tsuyohsi'
   tsuyoshi.save
-  tsuyoshi.notes << Note.create( :body => 'Friend of Kimiko & Kihei; a lawyer for some Japanese company operating in or near Irvine.')
+  tsuyoshi.notes << Note.create( :body => 'Friend of Kimiko & Kihei; a corporate lawyer')
   tsuyoshi.notes << Note.create( :body => 'Husband of Sachiko Sakai.')
 sachikosakai = Contact.new
   sachikosakai.first_name = 'Sachiko'
   sachikosakai.last_name = 'Sakai'
   sachikosakai.save
-  sachikosakai.notes << Note.create( :body => 'Friend of Kimiko & Kihei; an active Ph.D. archeologist; wife of Tsuyoshi.')
+  sachikosakai.notes << Note.create( :body => 'Friend of Kimiko & Kihei; Ph.D. archeologist')
   sachikosakai.notes << Note.create( :body => '15 Flaxwood, Irvine, CA.')

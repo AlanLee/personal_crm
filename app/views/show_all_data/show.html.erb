@@ -1,7 +1,7 @@
 <h1>Show All Data (Demo)</h1>
 
   <table style="border: 1px solid black">
-  <tr><td> First Name </td><td> Last Name </td><td> Note</td><td> Should Do</td><td> Phone Number</td></tr>
+  <tr><td> First Name </td><td> Last Name </td><td> Note</td><td> Dinner Friends</td><td> Should Do</td><td> Phone Number</td></tr>
   <% if @contact_all != nil %>
       <% @contact_all.each do |c| %>
           <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
@@ -11,6 +11,16 @@
                   <% i = 1 %>
                   <%  c.notes.each do |n| %>
                       <%= i %>&nbsp; <%= n.body %><br>
+                      <% i += 1 %>
+                  <% end %>
+              <% end %>
+              </td>
+
+              <td>
+              <% if c.dinner_friends != nil %>
+                  <% i = 1 %>
+                  <%  c.dinner_friends.each do |a| %>
+                      <%= i %>&nbsp; <%= a.who %><br>
                       <% i += 1 %>
                   <% end %>
               <% end %>
