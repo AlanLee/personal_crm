@@ -44,7 +44,7 @@ alanturing = Contact.new
   alanturing.save
   alanturing.notes << Note.create( :body => 'is another Alan in this database table' )
   alanturing.notes << Note.create( :body => 'was an English computer scientist' )
-  alanturing.notes << Note.create( :body => 'June 23, 1912 - June 7, 1954' )
+  alanturing.notes << Note.create( :body => 'lived June 23, 1912 - June 7, 1954' )
 alansee = Contact.new
   alansee.first_name = 'Alan'
   alansee.last_name  =  'See'
