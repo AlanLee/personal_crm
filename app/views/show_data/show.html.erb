@@ -1,18 +1,22 @@
 <table><tr>
-<td style="font-size: 20px"><b>Personal CRM</b>&nbsp; &nbsp; </td>
-<td><a href = "../home/index">Home</a> &nbsp; &nbsp; </td>
-<td><a href = "../show_data/show">Show Data</a> &nbsp; &nbsp; </td>
-<td>(<a href = "../show_all_data/show">show all data</a>) &nbsp; &nbsp; </td>
+<td style="font-size: 20px"><b>Personal CRM</b>&nbsp; </td>
+<td> &nbsp; <a href = "../home/index">Home</a> &nbsp; </td>
+<td style="background-color: moccasin"> &nbsp; <a href = "../show_data/show">Show Data</a> &nbsp; </td>
+<td> &nbsp; (<a href = "../show_all_data/show">show all data</a>) &nbsp; </td>
 <td>(<a href = "../dinner_friends">dinner friends</a>)&nbsp;</td></tr>
 <tr style="background-color: moccasin"><td colspan=5></td></tr>
 </tr></table>
 
 <h3>Show Data</h3>
 
+<form action="select_by_first_name_search_string" method="post"> Select Contacts by First Name (exact match required): <input type="text" name="search_string" />
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" /> <input type="submit" value= "Submit" /></form>
+
+<% if @search_string != nil %>
   <table style="border: 1px solid black">
   <tr><td> First Name </td><td> Last Name </td><td> Note</td><td> Dinner Friends</td><td> Should Do</td><td> Phone Number</td></tr>
-  <% if @contact_all != nil %>
-      <% @contact_all.each do |c| %>
+  <% if @contact_selected != nil %>
+      <% @contact_selected.each do |c| %>
           <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
 
               <td>
@@ -58,4 +62,5 @@
   <% end %>
   </table>
 
-<p> Contact Record Count: &nbsp; <%= @contact_all.count %></p>
+<p> Contact Record Count: &nbsp; <%= @contact_selected.count %></p>
+<% end %>

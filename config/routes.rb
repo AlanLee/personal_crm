@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'show_data/show'
+ post 'show_data/show'
+ post 'show_data/select_by_first_name_search_string'
+
   get 'show_all_data/show'
 
   get  'dinner_friends/new'

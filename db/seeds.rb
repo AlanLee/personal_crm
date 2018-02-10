@@ -53,6 +53,12 @@ alansee = Contact.new
   alansee.notes << Note.create( :body => 'and eating See\'s Candies' )
   alansee.actions << Action.create( :should_do => 'invite him out sometime' )
   alansee.phone_numbers << PhoneNumber.create( :call_number => 9494333366 )
+eliaherrera = Contact.new
+  eliaherrera.first_name = 'Elia'
+  eliaherrera.last_name  =  'Herrera'
+  eliaherrera.save
+  eliaherrera.actions << Action.create( :should_do => 'should introduce her to Mickey' )
+  eliaherrera.dinner_friends << DinnerFriend.create( :who => 'Sofia, Elia\'s youngest sister' )
 minniemouse = Contact.new
   minniemouse.first_name = 'Minnie'
   minniemouse.last_name  =  'Mouse'
@@ -71,3 +77,8 @@ sachikosakai = Contact.new
   sachikosakai.save
   sachikosakai.notes << Note.create( :body => 'Friend of Kimiko & Kihei; Ph.D. archeologist')
   sachikosakai.notes << Note.create( :body => '15 Flaxwood, Irvine, CA.')
+ellenleeway = Contact.new
+  ellenleeway.first_name = 'Ellen'
+  ellenleeway.last_name  =  'Leeway'
+  ellenleeway.save
+  ellenleeway.notes << Note.create( :body => 'created for testing only' )
