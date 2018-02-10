@@ -82,3 +82,22 @@ ellenleeway = Contact.new
   ellenleeway.last_name  =  'Leeway'
   ellenleeway.save
   ellenleeway.notes << Note.create( :body => 'created for testing only' )
+johnelway = Contact.new
+  johnelway.first_name = 'John'
+  johnelway.last_name  =  'Elway'
+  johnelway.save
+henrykissinger = Contact.new
+  henrykissinger.first_name = 'Henry'
+  henrykissinger.last_name  =  'Kissinger'
+  henrykissinger.save
+mickeymouse = Contact.new
+  mickeymouse.first_name = 'Mickey'
+  mickeymouse.last_name  =  'Mouse'
+  mickeymouse.save
+mightymouse = Contact.new
+  mightymouse.first_name = 'Mighty'
+  mightymouse.last_name  =  'Mouse'
+  mightymouse.save
+zorro = Contact.new
+  zorro.first_name = 'Zorro'
+  zorro.save

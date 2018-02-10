@@ -7,60 +7,65 @@
 <tr style="background-color: moccasin"><td colspan=5></td></tr>
 </tr></table>
 
-<h3>Show Data</h3>
+<h3>Select Contacts</h3>
 
-<form action="select_by_first_name_search_string" method="post"> Select Contacts by First Name (exact match required): <input type="text" name="search_string" />
+<form action="select_by_first_name_search_string" method="post"> Select Contacts by First Name (case-insensitive paritial-matching): <input type="text" name="search_string" />
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" /> <input type="submit" value= "Submit" /></form>
 
 <% if @search_string != nil %>
-  <table style="border: 1px solid black">
-  <tr><td> First Name </td><td> Last Name </td><td> Note</td><td> Dinner Friends</td><td> Should Do</td><td> Phone Number</td></tr>
-  <% if @contact_selected != nil %>
-      <% @contact_selected.each do |c| %>
-          <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
 
-              <td>
-              <% if c.notes != nil %>
-                  <% i = 1 %>
-                  <%  c.notes.each do |n| %>
-                      <%= i %>&nbsp; <%= n.body %><br>
-                      <% i += 1 %>
+  Search string:&nbsp; <b><%= @search_string %></b> &nbsp; &nbsp;
+  Search results record count:&nbsp; <b><%= @contact_selected.count %></b><br><br>
+
+  <% if @contact_selected.count != 0 %>
+
+      <table style="border: 1px solid black">
+      <tr><td> First Name </td><td> Last Name </td><td> Note</td><td> Dinner Friends</td><td> Should Do</td><td> Phone Number</td></tr>
+      <% if @contact_selected != nil %>
+          <% @contact_selected.each do |c| %>
+              <tr><td style="background-color: orange">  <%= c.first_name %> </td><td style="background-color: orange"> <%= c.last_name %> </td>
+
+                  <td>
+                  <% if c.notes != nil %>
+                      <% i = 1 %>
+                      <%  c.notes.each do |n| %>
+                          <%= i %>&nbsp; <%= n.body %><br>
+                          <% i += 1 %>
+                      <% end %>
                   <% end %>
-              <% end %>
-              </td>
+                  </td>
 
-              <td>
-              <% if c.dinner_friends != nil %>
-                  <% i = 1 %>
-                  <%  c.dinner_friends.each do |a| %>
-                      <%= i %>&nbsp; <%= a.who %><br>
-                      <% i += 1 %>
+                  <td>
+                  <% if c.dinner_friends != nil %>
+                      <% i = 1 %>
+                      <%  c.dinner_friends.each do |a| %>
+                          <%= i %>&nbsp; <%= a.who %><br>
+                          <% i += 1 %>
+                      <% end %>
                   <% end %>
-              <% end %>
-              </td>
+                  </td>
 
-              <td>
-              <% if c.actions != nil %>
-                  <% i = 1 %>
-                  <%  c.actions.each do |a| %>
-                      <%= i %>&nbsp; <%= a.should_do %><br>
-                      <% i += 1 %>
+                  <td>
+                  <% if c.actions != nil %>
+                      <% i = 1 %>
+                      <%  c.actions.each do |a| %>
+                          <%= i %>&nbsp; <%= a.should_do %><br>
+                          <% i += 1 %>
+                      <% end %>
                   <% end %>
-              <% end %>
-              </td>
+                  </td>
 
-              <td>
-              <% if c.phone_numbers != nil %>
-                  <%  c.phone_numbers.each do |p| %>
-                      <%= p.call_number %><br>
+                  <td>
+                  <% if c.phone_numbers != nil %>
+                      <%  c.phone_numbers.each do |p| %>
+                          <%= p.call_number %><br>
+                      <% end %>
                   <% end %>
-              <% end %>
-              </td>
+                  </td>
 
-          </tr>
+              </tr>
+          <% end %>
       <% end %>
-  <% end %>
-  </table>
-
-<p> Contact Record Count: &nbsp; <%= @contact_selected.count %></p>
+      </table>
+    <% end %>
 <% end %>

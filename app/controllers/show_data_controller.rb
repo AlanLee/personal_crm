@@ -2,7 +2,8 @@ class ShowDataController < ApplicationController
     def show
       if @search_string != nil
         # @contact_selected = Contact.where("first_name like ?", "Henry")
-        @contact_selected = Contact.where("first_name like ?", "#{@search_string}")
+        @contact_selected = Contact.where("lower(first_name) like ?", "%#{@search_string.downcase}%").order(:first_name).order(:last_name)
+    #            @contact_selected = Contact.where("first_name like ?", "%#{@search_string}%")
         @note_all         = Note.all
         @action_all       = Action.all
         @phone_number_all = PhoneNumber.all
