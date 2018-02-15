@@ -101,3 +101,8 @@ mightymouse = Contact.new
 zorro = Contact.new
   zorro.first_name = 'Zorro'
   zorro.save
+chloekim = Contact.new
+  chloekim.first_name = 'Chloe'
+  chloekim.last_name = 'Kim'
+  chloekim.save
+  chloekim.notes << Note.create( :body => 'She\'s so cool.')
