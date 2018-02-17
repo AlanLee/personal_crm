@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214010414) do
+ActiveRecord::Schema.define(version: 20180217022726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,12 +53,13 @@ ActiveRecord::Schema.define(version: 20180214010414) do
   end
 
   create_table "phone_numbers", force: :cascade do |t|
-    t.bigint "call_number"
     t.string "phone_type"
     t.integer "display_priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "contact_id"
+    t.integer "phone_area_code"
+    t.integer "phone_7_digits"
   end
 
   add_foreign_key "dinner_friends", "contacts"

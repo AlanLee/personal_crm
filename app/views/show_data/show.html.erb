@@ -58,7 +58,7 @@
                   <td>
                   <% if c.phone_numbers != nil %>
                       <%  c.phone_numbers.each do |p| %>
-                          <%= p.call_number %><br>
+                          <%= p.phone_area_code %> <%= p.phone_7_digits %><br>
                       <% end %>
                   <% end %>
                   </td>

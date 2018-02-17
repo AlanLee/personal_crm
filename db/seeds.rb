@@ -14,7 +14,7 @@ alanlee = Contact.new
   alanlee.notes << Note.create( :body => 'has daughter in Cambridge, son in SF' )
   alanlee.notes << Note.create( :body => 'doesn\'t watch TV except USC football games' )
   alanlee.notes << Note.create( :body => 'has lots of books in the large bookcase' )
-  alanlee.phone_numbers << PhoneNumber.create( :call_number => 9494333366, :phone_type => 'cell' )
+  alanlee.phone_numbers << PhoneNumber.create( :phone_area_code => 949, :phone_7_digits => 4333366, :phone_type => 'cell' )
 henrylee = Contact.new
   henrylee.first_name = 'Henry'
   henrylee.last_name = 'Lee'
@@ -25,7 +25,7 @@ henrylee = Contact.new
   henrylee.actions << Action.create( :should_do => 'meet for coffee and discuss music' )
   henrylee.actions << Action.create( :should_do => 'check if Henry needs funding later in 2018' )
   henrylee.actions << Action.create( :should_do => 'does Henry play golf? should invite him if he plays' )
-  henrylee.phone_numbers << PhoneNumber.create( :call_number => 9497519287, :phone_type => 'cell' )
+  henrylee.phone_numbers << PhoneNumber.create( :phone_area_code => 949, :phone_7_digits => 7519287, :phone_type => 'cell' )
 heidilee = Contact.new
   heidilee.first_name = 'Heidi'
   heidilee.last_name = 'Lee'
@@ -35,7 +35,7 @@ heidilee = Contact.new
   heidilee.notes << Note.create( :body => 'is a black-belt in Tai Quon Do' )
   heidilee.notes << Note.create( :body => 'BS Business 2011 Boston University' )
   heidilee.actions << Action.create( :should_do => 'buy her a cookbok and get a new recipe from her' )
-  heidilee.phone_numbers << PhoneNumber.create( :call_number => 9493834909 )
+  heidilee.phone_numbers << PhoneNumber.create( :phone_area_code => 949, :phone_7_digits => 8384909, :phone_type => 'cell' )
   heidilee.dinner_friends << DinnerFriend.create( :who => 'Bruce Lee, from the Tae Kwon Do club' )
   heidilee.dinner_friends << DinnerFriend.create( :who => 'Lauren, Heidi\'s BU classmate and apt-mate' )
 alanturing = Contact.new
@@ -52,7 +52,6 @@ alansee = Contact.new
   alansee.notes << Note.create( :body => 'likes sitting on a See-Saw' )
   alansee.notes << Note.create( :body => 'and eating See\'s Candies' )
   alansee.actions << Action.create( :should_do => 'invite him out sometime' )
-  alansee.phone_numbers << PhoneNumber.create( :call_number => 9494333366 )
 eliaherrera = Contact.new
   eliaherrera.first_name = 'Elia'
   eliaherrera.last_name  =  'Herrera'
@@ -63,7 +62,6 @@ minniemouse = Contact.new
   minniemouse.first_name = 'Minnie'
   minniemouse.last_name  =  'Mouse'
   minniemouse.save
-  minniemouse.phone_numbers << PhoneNumber.create( :call_number => 8001001000 )
   minniemouse.actions << Action.create( :should_do => 'should introduce her to Mickey' )
   minniemouse.dinner_friends << DinnerFriend.create( :who => 'Donald Duck is Minnie\'s best friend' )
 tsuyoshi = Contact.new
