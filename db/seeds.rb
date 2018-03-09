@@ -104,3 +104,10 @@ chloekim = Contact.new
   chloekim.last_name = 'Kim'
   chloekim.save
   chloekim.notes << Note.create( :body => 'She\'s so cool.')
+billgates = Contact.new
+  billgates.first_name = 'Bill'
+  billgates.last_name = 'Gates'
+  billgates.save
+  billgates.notes << Note.create( :body => 'Founded Microsoft.')
+  billgates.dinner_friends << DinnerFriend.create( :who => 'Steve Ballmer' )
+  billgates.actions << Action.create( :should_do => 'Ask him for a loan.' )

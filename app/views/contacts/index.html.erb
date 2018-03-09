@@ -1,0 +1,31 @@
+<table><tr>
+<td style="font-size: 20px"><b>Personal CRM</b>&nbsp; </td>
+<td> &nbsp; <a href = "../home/index">Home</a> &nbsp; </td>
+<td> &nbsp; <a href = "../show_data/show">Show Data</a> &nbsp; </td>
+<td style="background-color: moccasin"> &nbsp; <a href = "../contacts/index">CRUD Contacts</a> &nbsp; </td>
+<td> &nbsp; (<a href = "../show_all_data/show">show all data</a>) &nbsp; </td>
+<td> &nbsp; (<a href = "../dinner_friends">dinner friends</a>)&nbsp;</td></tr>
+<tr style="background-color: moccasin"><td colspan=6></td></tr>
+</tr></table>
+
+<h3>Create New Contact</h3>
+
+<form action="create_new_contact_by_name" method="post">
+  Name of New Contact: <input type="text" name="new_name" />
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" /> <input type="submit" value= "Submit" /></form>
+
+<br>
+  <% if @new_name != nil %>
+      <p> Name of New Contact: <%= @new_name %> </p>
+  <% end %>
+
+
+
+<br><br>
+
+
+
+<table style="border: 1px solid black">
+<tr><td> Name </td><td> First Name </td><td> Middle Name </td><td> Last Name </td><td> Other Name </td><td> Prefix</td><td> Suffix</td><td> Head Shot Link</td></tr>
+
+</table>
